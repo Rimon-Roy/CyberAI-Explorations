@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Website Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Phishing Website Detection</h1>
+        <form method="POST">
+            <label for="model">Choose a Model:</label>
+            <select name="model" required>
+                {% for model in models %}
+                    <option value="{{ model }}" {% if model == selected_model %}selected{% endif %}>{{ model }}</option>
+                {% endfor %}
+            </select>
+            <p class="recommendation">We recommend using <strong>{{ recommended_model }}</strong> based on performance.</p>
+
+            <h3>Enter Website Features:</h3>
+            {% for i in range(1, 50) %}
+                <label>Feature {{ i }}:</label>
+                <input type="number" step="any" name="feature_{{ i }}" required>
+            {% endfor %}
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction is not none %}
+            <div class="result">
+                <h2>Prediction: {{ "Phishing" if prediction == 1 else "Legitimate" }}</h2>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

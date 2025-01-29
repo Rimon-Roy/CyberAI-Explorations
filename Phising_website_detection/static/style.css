@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    width: 50%;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px gray;
+}
+h1, h2 {
+    text-align: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+input, select, button {
+    margin-top: 5px;
+    padding: 8px;
+    font-size: 16px;
+}
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+button:hover {
+    background-color: #0056b3;
+}
+.recommendation {
+    color: green;
+    font-weight: bold;
+}
+.result {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+}
